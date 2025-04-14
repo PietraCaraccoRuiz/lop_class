@@ -153,13 +153,19 @@ elif opcao == 12:
     # O programa deve solicitar ao usuário a taxa de reprodução, a taxa de mortalidade e o número inicial de coelhos.
     # Use um loop for ou while para simular várias gerações e exiba a população de coelhos após um número de gerações especificado pelo usuário.
 
-    taxa_reproducao = float(input("Taxa de reprodução: "))
-    taxa_mortalidade = float(input("Taxa de reprodução: "))
-    numero_inicial = int(input("Taxa de reprodução: "))
-    numero_geracoes = int(input("Taxa de reprodução: "))
+    populacao = int(input("Digite a população: "))
+    taxa_reproducao = float(input("Taxa de reprodução (%): "))
+    taxa_mortalidade = float(input("Taxa de mortalidade (%): "))
+    numero_geracoes = int(input("Número de gerações: "))
+
+    for i in range(1, numero_geracoes + 1):
+        nascimentos = populacao + (taxa_reproducao / 100)
+        mortes = populacao + (taxa_mortalidade / 100)
+        populacao = populacao + nascimentos - mortes
+        print(f"{i}° geração: {populacao:.2f} ")
 
 elif opcao == 13:
-    palavras = ["estrela"]
+    palavras = ["estrela", "coelho", "abacaxi", "borracha", "Brasil"]
     tentativas = 6
     palavra_lista = []
     lista = []
