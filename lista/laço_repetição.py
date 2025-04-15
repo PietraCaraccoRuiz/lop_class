@@ -4,13 +4,16 @@ opcao = int(input("Escolha o exercicio: "))
 
 # 1) Peça 10 números e conte quantos são múltiplos de 3. Use for.
 if opcao == 1:
-    mult = 0
+    mult =[]
+    quan_mult = 0
     i = 0
     for i in range(10):
         numero = int(input("\nDigite um número: "))
         if numero % 3 == 0:
-            mult += 1
-    print("São multiplos de 3: ", mult, " numeros")
+            mult.append(numero)
+            quan_mult += 1
+    print("lista: ", mult)
+    print("São multiplos de 3: ", quan_mult, " numeros")
 
 
 # 2) Crie um programa que simule o uso de senha com tentativas infinitas
@@ -39,6 +42,7 @@ elif opcao == 4:
 
     numero1 = int(input("digite um numero: "))
     numero2 = int(input("digite outro numero: "))
+    primos = []
     j = 0
 
     for i in range(numero1, numero2+ 1):
@@ -47,19 +51,23 @@ elif opcao == 4:
             if i % j == 0:
                 cont += 1
         if cont == 2:
-            print("número primo: ", i)
+            primos.append(i)
+    print("Números primos: ", primos)
 
 elif opcao == 5:
     tentativa = 3
     senha = "123"
     while tentativa != 0:
+        print("Você tem ", tentativa, " tentativas\n")
         senha_tentativa = input("Digite a senha: ")
         if senha_tentativa == senha:
             print("Você acertou!!")
-            tentativa = 0
+            break
         else:
-            print("Você errou!!\n voce tem ", tentativa, " tentativas")
             tentativa -= 1
+            print("Você errou!!")
+    else:
+        print("Você perdeu :(")
 
 elif opcao == 6:
     i = 1
@@ -68,9 +76,9 @@ elif opcao == 6:
     for i in range(1, 11):
         numero = int(input(f"Digite o {i}° número: "))
         if numero % 2 == 0:
-            par.insert(0, numero)
+            par.append(numero)
         if numero % 2 != 0:
-            impar.insert(0, numero)
+            impar.append(numero)
     print(f"Números pares:{par}\nNúmeros ímpares:{impar}")
 
 elif opcao == 7:
@@ -146,7 +154,7 @@ elif opcao == 10:
 
     print("Segundo maior número: ", seg_maior)
 
-elif opcao == 12:
+elif opcao == 11:
 
     # Crie um programa que simule o crescimento de uma população de coelhos ao longo de várias gerações.
     # Os coelhos se reproduzem a uma taxa fixa a cada geração, e uma porcentagem deles morre a cada geração.
@@ -164,7 +172,7 @@ elif opcao == 12:
         populacao = populacao + nascimentos - mortes
         print(f"{i}° geração: {populacao:.2f} ")
 
-elif opcao == 13:
+elif opcao == 12:
     palavras = ["estrela", "coelho", "abacaxi", "borracha", "Brasil"]
     tentativas = 6
     palavra_lista = []
