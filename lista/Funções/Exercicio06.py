@@ -1,0 +1,8 @@
+def contar_vogais(palavra):
+    vogais = 0
+    for i in palavra:
+        if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
+            vogais+= 1
+
+palavra = input("Digite uma palavra: ")
+print(contar_vogais(palavra))
