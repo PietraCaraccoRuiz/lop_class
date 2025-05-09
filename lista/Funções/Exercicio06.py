@@ -3,6 +3,7 @@ def contar_vogais(palavra):
     for i in palavra:
         if i == "a" or i == "e" or i == "i" or i == "o" or i == "u":
             vogais+= 1
+    return vogais
 
 palavra = input("Digite uma palavra: ")
-print(contar_vogais(palavra))
+print("quantidade voagais: ", contar_vogais(palavra))

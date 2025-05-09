@@ -1,15 +1,17 @@
-def maior_n(n, maior):
+maior = 0
+
+def maior_n(n):
+    global maior
     if n > maior:
         maior = n
     return maior
 
 continuar = True
-maior = 0
 
 while continuar:
     numero = int(input("Digite um numero: "))
 
-    maior = maior_n(numero, maior)
+    maior_n(numero)
 
     opcao = int(input("Deseja continuar?  1- SIM  2-NÃO"))
     if opcao == 1:
